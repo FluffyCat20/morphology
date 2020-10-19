@@ -1,7 +1,15 @@
-cmake_minimum_required (VERSION 2.8)
-project ( morphology )
-set (OpenCV_DIR c:/opencv/build)
-find_package ( OpenCV REQUIRED )
-include_directories ( ${OpenCV_INCLUDE_DIRS} )
-add_executable ( morphology ${PROJECT_SOURCE_DIR}/morphology.cpp )
-target_link_libraries( Task1 ${OpenCV_LIBS} )
+cmake_minimum_required(VERSION 2.8.12)
+
+project(morphology1)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt5Core)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
+add_executable(${PROJECT_NAME} "main.cpp")
+
+target_link_libraries(${PROJECT_NAME} Qt5::Core)
+target_link_libraries(${PROJECT_NAME}  ${OpenCV_LIBS} )
